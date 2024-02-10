@@ -1,6 +1,16 @@
-<IfModule authz_core_module>
-    Require all denied
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /gestion_solde/
+
+    # Permet de ne pas appliquer les règles aux fichiers existants
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Redirige toutes les requêtes non existantes vers index.php/contrôleur/méthode
+    RewriteRule ^(.*)$ index.php/$1 [L]
 </IfModule>
-<IfModule !authz_core_module>
-    Deny from all
+
+<IfModule !mod_rewrite.c>
+    # Si mod_rewrite n'est pas disponible, il peut être nécessaire de mettre en commentaire la ligne suivante :
+    # ErrorDocument 404 /index.php
 </IfModule>

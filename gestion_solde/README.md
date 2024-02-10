@@ -4,7 +4,7 @@ Ce projet est une application de gestion des soldes.
 
 ## Installation
 
-1. Clonez ce dépôt : `git clone https://github.com/votre-utilisateur/gestion-solde.git`
+1. Clonez ce dépôt : `git clone https://github.com/tojosoa15/Gestion_soldes.git`
 2. Configurez votre environnement LAMP ou WAMP.
 3. Importez la base de données `gestion_solde.sql`.
 4. Configurez les paramètres de connexion à la base de données dans le fichier `app/Config/Database.php`.
